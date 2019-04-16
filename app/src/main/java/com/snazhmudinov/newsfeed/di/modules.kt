@@ -4,6 +4,7 @@ import com.snazhmudinov.newsfeed.BuildConfig
 import com.snazhmudinov.newsfeed.api.ArticleDataSource
 import com.snazhmudinov.newsfeed.api.ArticleDataSourceFactory
 import com.snazhmudinov.newsfeed.api.NewsService
+import com.snazhmudinov.newsfeed.repository.NewsRepository
 import com.snazhmudinov.newsfeed.viewmodel.ArticlesViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -41,6 +42,13 @@ val appModule = module {
 
     single {
         ArticleDataSource(get())
+    }
+}
+
+val repoModule = module {
+
+    single {
+        NewsRepository(get())
     }
 }
 
